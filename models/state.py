@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ State Module for HBNB project """
+<<<<<<< HEAD
 from os import getenv
 from models.base_model import BaseModel, Base
 from models.city import City
@@ -25,3 +26,11 @@ class State(BaseModel, Base):
                 if city.state_id == self.id:
                     list_cities.append(city)
             return list_cities
+=======
+from models.base_model import BaseModel
+
+
+class State(BaseModel):
+    """ State class """
+    name = ""
+>>>>>>> cbaedfdd56b6e339a0af634cae7c81972e647043

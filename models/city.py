@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ City Module for HBNB project """
+<<<<<<< HEAD
 from os import getenv
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String, ForeignKey
@@ -17,3 +18,12 @@ class City(BaseModel, Base):
     else:
         state_id = ""
         name = ""
+=======
+from models.base_model import BaseModel
+
+
+class City(BaseModel):
+    """ The city class, contains state ID and name """
+    state_id = ""
+    name = ""
+>>>>>>> cbaedfdd56b6e339a0af634cae7c81972e647043

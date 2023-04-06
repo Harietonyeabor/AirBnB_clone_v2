@@ -2,7 +2,10 @@
 """ Console Module """
 import cmd
 import sys
+<<<<<<< HEAD
 import re
+=======
+>>>>>>> cbaedfdd56b6e339a0af634cae7c81972e647043
 from models.base_model import BaseModel
 from models.__init__ import storage
 from models.user import User
@@ -11,7 +14,10 @@ from models.state import State
 from models.city import City
 from models.amenity import Amenity
 from models.review import Review
+<<<<<<< HEAD
 from sqlalchemy import Column, String
+=======
+>>>>>>> cbaedfdd56b6e339a0af634cae7c81972e647043
 
 
 class HBNBCommand(cmd.Cmd):
@@ -39,6 +45,10 @@ class HBNBCommand(cmd.Cmd):
 
     def precmd(self, line):
         """Reformat command line for advanced command syntax.
+<<<<<<< HEAD
+=======
+
+>>>>>>> cbaedfdd56b6e339a0af634cae7c81972e647043
         Usage: <class name>.<command>([<id> [<*args> or <**kwargs>]])
         (Brackets denote optional fields in usage example.)
         """
@@ -74,7 +84,11 @@ class HBNBCommand(cmd.Cmd):
                 pline = pline[2].strip()  # pline is now str
                 if pline:
                     # check for *args or **kwargs
+<<<<<<< HEAD
                     if pline[0] == '{' and pline[-1] == '}'\
+=======
+                    if pline[0] is '{' and pline[-1] is'}'\
+>>>>>>> cbaedfdd56b6e339a0af634cae7c81972e647043
                             and type(eval(pline)) is dict:
                         _args = pline
                     else:
@@ -116,6 +130,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, args):
         """ Create an object of any class"""
+<<<<<<< HEAD
         pattern = """(^\w+)((?:\s+\w+=[^\s]+)+)?"""
         m = re.match(pattern, args)
         args = [s for s in m.groups() if s] if m else []
@@ -151,6 +166,18 @@ class HBNBCommand(cmd.Cmd):
 
         new_instance.save()
         print(new_instance.id)
+=======
+        if not args:
+            print("** class name missing **")
+            return
+        elif args not in HBNBCommand.classes:
+            print("** class doesn't exist **")
+            return
+        new_instance = HBNBCommand.classes[args]()
+        storage.save()
+        print(new_instance.id)
+        storage.save()
+>>>>>>> cbaedfdd56b6e339a0af634cae7c81972e647043
 
     def help_create(self):
         """ Help information for the create method """
@@ -232,7 +259,11 @@ class HBNBCommand(cmd.Cmd):
             if args not in HBNBCommand.classes:
                 print("** class doesn't exist **")
                 return
+<<<<<<< HEAD
             for k, v in storage.all().items():
+=======
+            for k, v in storage._FileStorage__objects.items():
+>>>>>>> cbaedfdd56b6e339a0af634cae7c81972e647043
                 if k.split('.')[0] == args:
                     print_list.append(str(v))
         else:
@@ -298,7 +329,11 @@ class HBNBCommand(cmd.Cmd):
                 args.append(v)
         else:  # isolate args
             args = args[2]
+<<<<<<< HEAD
             if args and args[0] == '\"':  # check for quoted arg
+=======
+            if args and args[0] is '\"':  # check for quoted arg
+>>>>>>> cbaedfdd56b6e339a0af634cae7c81972e647043
                 second_quote = args.find('\"', 1)
                 att_name = args[1:second_quote]
                 args = args[second_quote + 1:]
@@ -306,10 +341,17 @@ class HBNBCommand(cmd.Cmd):
             args = args.partition(' ')
 
             # if att_name was not quoted arg
+<<<<<<< HEAD
             if not att_name and args[0] != ' ':
                 att_name = args[0]
             # check for quoted val arg
             if args[2] and args[2][0] == '\"':
+=======
+            if not att_name and args[0] is not ' ':
+                att_name = args[0]
+            # check for quoted val arg
+            if args[2] and args[2][0] is '\"':
+>>>>>>> cbaedfdd56b6e339a0af634cae7c81972e647043
                 att_val = args[2][1:args[2].find('\"', 1)]
 
             # if att_val was not quoted arg

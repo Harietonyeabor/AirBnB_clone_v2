@@ -24,7 +24,11 @@ class test_basemodel(unittest.TestCase):
     def tearDown(self):
         try:
             os.remove('file.json')
+<<<<<<< HEAD
         except Exception:
+=======
+        except:
+>>>>>>> cbaedfdd56b6e339a0af634cae7c81972e647043
             pass
 
     def test_default(self):

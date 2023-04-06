@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> cbaedfdd56b6e339a0af634cae7c81972e647043
 #!/usr/bin/python3
 """ Module for testing file storage"""
 import unittest
@@ -22,7 +25,11 @@ class test_fileStorage(unittest.TestCase):
         """ Remove storage file at end of tests """
         try:
             os.remove('file.json')
+<<<<<<< HEAD
         except Exception:
+=======
+        except:
+>>>>>>> cbaedfdd56b6e339a0af634cae7c81972e647043
             pass
 
     def test_obj_list_empty(self):

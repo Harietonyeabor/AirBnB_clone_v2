@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """ State Module for the HBNB project """
 from os import getenv
 from models.base_model import BaseModel, Base
@@ -15,3 +16,11 @@ class Amenity(BaseModel, Base):
                                        back_populates="amenities")
     else:
         name = ""
+=======
+""" State Module for HBNB project """
+from models.base_model import BaseModel
+
+
+class Amenity(BaseModel):
+    name = ""
+>>>>>>> cbaedfdd56b6e339a0af634cae7c81972e647043
